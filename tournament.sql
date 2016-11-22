@@ -13,5 +13,8 @@ CREATE TABLE players (	id SERIAL PRIMARY KEY,
 CREATE TABLE matches (	round INTEGER,
 						player1 INTEGER,
 						player2 INTEGER.
-						winnder INTEGER,
+						winner INTEGER,
 						matchID SERIAL);
+
+CREATE TABLE records (	
+						)
