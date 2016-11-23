@@ -1,6 +1,6 @@
 # Tournament Results
 ### By Ian Agpawa
-##### This repo is for my tournament results project from the Udacity Full Stack Nanodegree course.  This project focuses on tracking players and matches in a game tournament with a PostgresSQL database by developing database schemas to store the game matches between players, and using a Python modfule to rank players and match them in a Swiss-system tournament.
+##### This repo is for my tournament results project from the Udacity Full Stack Nanodegree course.  This project focuses on tracking players and matches in a game tournament with a PostgresSQL database. Database schemas store the game matches between players, and a Python module ranks and matches players in a Swiss-system tournament.
 
 
 ### Quick Start
