@@ -7,11 +7,17 @@
 -- these lines here.
 
 
-CREATE TABLE players (	id SERIAL PRIMARY KEY,
+CREATE TABLE players (	player_id SERIAL PRIMARY KEY,
 						name TEXT);
 
-CREATE TABLE matches (	round INTEGER,
-						player1 INTEGER,
-						player2 INTEGER,
-						winner INTEGER,
-						matchID SERIAL);
+CREATE TABLE matches (	match SERIAL PRIMARY KEY,
+						winner INTEGER NOT NULL,
+						loser INTEGER NOT NULL);
+
+
+CREATE VIEW standings AS
+SELECT players.player_id, players.name,
+(SELECT count(matches.winner) from matches WHERE players.player_id = matches.winner) AS wins,
+(SELECT count(*) from matches where players.player_id = matches.winner or players.player_id = matches.loser) AS matches
+FROM players
+ORDER by wins DESC, matches DESC;
