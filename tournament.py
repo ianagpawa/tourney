@@ -127,4 +127,5 @@ def swissPairings():
             id2s.append(player[0])
             name2s.append(player[1])
         count += 1
-    return zip(id1s, name1s, id2s, name2s)
+    pairs = zip(id1s, name1s, id2s, name2s)
+    return pairs
