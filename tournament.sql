@@ -7,12 +7,17 @@
 -- these lines here.
 
 
+DROP DATABASE IF EXISTS tournament;
+
+CREATE DATABASE tournament;
+\c tournament
+
 CREATE TABLE players (	player_id SERIAL PRIMARY KEY,
 						name TEXT);
 
 CREATE TABLE matches (	match SERIAL PRIMARY KEY,
-						winner INTEGER NOT NULL,
-						loser INTEGER NOT NULL);
+						winner INTEGER REFERENCES players(player_id) NOT NULL,
+						loser INTEGER REFERENCES players(player_id) NOT NULL);
 
 
 CREATE VIEW standings AS
